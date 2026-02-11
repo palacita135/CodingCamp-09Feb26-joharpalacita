@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revou - Company Profile</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="assets/images/revou.png" alt="RevoU Logo" class="logo-image">
+                <span class="logo-text">Revou Software Engineer Bootcamp</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="profile.html" class="nav-link">Our Profile</a></li>
+                <li><a href="#message-section" class="nav-link">Message Us</a></li>
+                <li><a href="profile.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <section class="welcome-section">
+        <div class="welcome-container">
+            <h1>Hi <span id="userName">Guest</span>, Welcome To Revou Software Engineer Bootcamp</h1>
+            <p class="welcome-subtitle">We are delighted to see you. Connect with us and explore our services.</p>
+        </div>
+    </section>
+
+    <section class="headquarters-section">
+        <div class="container">
+            <h2>Our Headquarters</h2>
+            <div class="locations-grid">
+                <div class="location-card">
+                    <div class="location-circle"></div>
+                    <h3>Jakarta</h3>
+                </div>
+                <div class="location-card">
+                    <div class="location-circle"></div>
+                    <h3>Bandung</h3>
+                </div>
+                <div class="location-card">
+                    <div class="location-circle"></div>
+                    <h3>Surabaya</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="message-section" id="message-section">
+        <div class="container">
+            <div class="message-container">
+                <div class="form-wrapper">
+                    <h2>Message Us</h2>
+                    <form id="contactForm" onsubmit="handleFormSubmit(event)">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" placeholder="Your Full Name" required>
+                            <small id="nameError" class="error-text"></small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                            <small id="emailError" class="error-text"></small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" name="phone" placeholder="08XXXXXXXX" required>
+                            <small id="phoneError" class="error-text"></small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Subject (Optional)</label>
+                            <input type="text" id="subject" name="subject" placeholder="Subject">
+                        </div>
+
+                        <button type="submit" class="submit-btn">Submit</button>
+                    </form>
+                </div>
+
+                <div class="contact-info-wrapper">
+                    <h3>Contact Info</h3>
+                    <div class="contact-info">
+                        <p><strong>Hours:</strong> Fri-Jun 11:00 to 12:45 AM(GMT+7)00</p>
+                        <p><strong>Phone:</strong><br>Jakarta: +62-21-1234567<br>Bandung: +62-22-7654321<br>Surabaya: +62-31-9876543</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="resultSection" style="display: none;" class="result-section">
+        <div class="container">
+            <div class="result-box">
+                <h3>Thank You! We Received Your Message</h3>
+                <div id="resultContent"></div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2026 Revou Software Engineer Bootcamp. All rights reserved.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
