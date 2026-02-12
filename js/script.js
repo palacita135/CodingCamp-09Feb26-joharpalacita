@@ -19,9 +19,25 @@ function updateWelcomeName(name) {
 function promptForName() {
     const userNameElement = document.getElementById('userName');
     if (userNameElement && userNameElement.textContent === 'Guest') {
-        userNameElement.style.cursor = 'pointer';
-        userNameElement.style.textDecoration = 'underline';
-        userNameElement.title = 'Click to enter your name';
+        let userName = null;
+        let isValid = false;
+        
+        while (!isValid) {
+            userName = prompt('Please input your name so we can Welcome You');
+            
+            if (userName === null) {
+                // User clicked Cancel, show the same message again
+                continue;
+            }
+            
+            if (userName.trim() !== '') {
+                isValid = true;
+                const trimmedName = userName.trim();
+                localStorage.setItem('userName', trimmedName);
+                updateWelcomeName(trimmedName);
+            }
+            // If empty, loop continues and shows prompt again
+        }
     }
 }
 
